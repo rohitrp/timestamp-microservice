@@ -1,9 +1,35 @@
 <!doctype html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timestamp Microservice</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,600' rel='stylesheet' type='text/css'>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Timestamp Microservice</h1>
+    <div class="container">
+      <h1 class="header">Timestamp Microservice</h1>
+      <blockquote>
+        <h3>Usage</h3>
+        <div class="code">
+          <code>
+            https://timestamp-ms-1.herokuapp.com/feb%2026%202016
+          </code><br>
+          <code>        
+            https://timestamp-ms-1.herokuapp.com/1456425000
+          </code>
+        </div>
+        <h3>Output</h3>
+        <div class="code">
+          <code>
+            {"unix":1456425000,"natural":"February 26, 2016"}
+          </code>
+        </div>
+      </blockquote>
+    </div>
   </body>
 </html>
