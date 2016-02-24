@@ -2,7 +2,7 @@ var express = require("express")
   , url = require("url")
   , moment = require("moment")
   , app = express()
-  , port = "3000"
+  , port = process.env.PORT || "3000"
 
 app.use('/', express.static(__dirname + '/public'))
 
