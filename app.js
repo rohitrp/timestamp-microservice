@@ -12,9 +12,39 @@ app.get('/', function(req, res) {
 
 app.get('/*', function(req, res) {
   var args = url.parse(req.url, true)
-    , date = moment(new Date(decodeURIComponent(args.pathname)).toISOString())
+    , date = args.pathname.replace('/', '')
+    , unix
+    , natural
+    
+  try {
+    
+    if (date.replace(/\d+/, '') !== '') {
+      date = moment(new Date(decodeURIComponent(date)).toISOString())
+    }
+    else {
+      date = moment.unix(+date)
+    }
+    
+    unix = date.unix()
+    natural = date.format("MMMM DD, YYYY")
+    
+  } catch(err) {
+    
+    console.log("Time not in correct format")
+    
+    unix = null
+    natural = null
+    
+  } finally {
+    
+    var result = {
+      unix: unix,
+      natural: natural
+    }    
+    
+  }
   
-  res.end(date.format())
+  res.json(result)
 })
 
 app.listen(port, function() {
